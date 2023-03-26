@@ -1,12 +1,6 @@
-/* Your default font will be Hack which is found in the standard
- * Arch repos and is listed as a dependency for this build. JoyPixels is also
- * a hard dependency and makes colored fonts and emojis possible.
- */
-static char *font = "HackNerdFont:pixelsize=14:antialias=true:autohint=true";
+static char *font = "JetBrainsMono:pixelsize=14.5:antialias=true:autohint=true";
 static char *font2[] = { 
-    "HackNerdFont:pixelsize=14:antialias=true:autohint=true",
-    "NotoColorEmoji:weight=bold:size=14:antialias=true:hinting=true", 
-    "NotoEmoji:weight=bold:size=14:antialias=true:hinting=true" 
+    "JoyPixels:pixelsize=14:antialias=true:autohint=true",
 };
 static int borderpx = 2;
 
@@ -96,37 +90,64 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.80;
+ float alpha = 0.80;
+// float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 /* Colorscheme based on the 'Doom One' theme from Doom Emacs */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#ffffff",
-	"#ff6c6b",
-	"#98be65",
-	"#fc3f17",
-	"#51afef",
-	"#c678dd",
-	"#5699af",
-	"#696969",
+	// "#696969",
+	// "#ff6c6b",
+	// "#98be65",
+	// "#fc3f17",
+	// "#51afef",
+	// "#c678dd",
+	// "#5699af",
+	// "#ffffff",
 
+
+	[0] = "#323437",
+	[1] = "#ff5454",
+	[2] = "#8cc85f",
+	[3] = "#e3c78a",
+	[4] = "#80a0ff",
+	[5] = "#d183e8",
+	[6] = "#79dac8",
+	[7] = "#a1aab8",
+  
 	/* 8 bright colors */
-	"#ffffff",
-	"#fc3f17",
-	"#4db5bd",
-	"#ecbe7b",
-	"#3071db",
-	"#a9a1e1",
-	"#46d9ff",
-	"#ffffff",
+	 // "#545454",
+	 // "#fc3f17",
+	 // "#4db5bd",
+	 // "#ecbe7b",
+	 // "#3071db",
+	 // "#a9a1e1",
+	 // "#46d9ff",
+	 // "#ffffff",
+
+	[8] = "#7c8f8f",
+	[9] = "#ff5189",
+	[10] = "#36c692",
+	[11] = "#bfbf97",
+	[12] = "#74b2ff",
+	[13] = "#ae81ff",
+	[14] = "#85dc85",
+	[15] = "#ffffff",
+
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#282c34",
-	"#ffffff",
-	"#ffffff",
+	// "#282c34",
+	// "#ffffff",
+	// "#ffffff",
+
+  [256] = "#282a36", 
+  [257] = "#f8f8f2",
+  [258] = "#080808",
+  [259]= "#eeeeee",
+
 };
 
 
@@ -134,10 +155,15 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+// unsigned int defaultfg = 259;
 unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
+unsigned int defaultbg = 258;
 static unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 15;
+// unsigned int defaultfg = 7;
+// unsigned int defaultbg = 0;
+// static unsigned int defaultcs = 256;
+// static unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
